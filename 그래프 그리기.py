@@ -1,10 +1,5 @@
-
-# coding: utf-8
-
-# In[6]:
-
-
 import numpy as np
+
 pk=float(input('산의 pKa를 입력해주세요'))
 k=10**((-1)*(pk))
 c=float(input('산의 농도를 입력해주세요(M)'))
@@ -33,16 +28,13 @@ def pH(x, cNaOH, c, v, k):
             l.append(answer)
     return l
 
-def dang(x, cNaOH, c, v, k):
-    answer = 14 + 0.5* np.log10((10**(-14))*(c*v/(v+x))/k)
-    return answer 
 import matplotlib.pyplot as plt 
 get_ipython().run_line_magic('matplotlib', 'inline')
 x1= np.arange(0, vNaOH, 0.001).tolist()
 y1= pH(x1, cNaOH, c, v, k)
 plt.plot(x1,y1)
 plt.show()
-a=c*v/cNaOH
-b= dang(a, cNaOH, c, v, k)
-print(int(a), 'mL를 넣었을 때 당량점 입니다. 이때 pH는',float(b), '입니다.')
 
+a=c*v/cNaOH
+b=lambda(c,v,k:14 + 0.5* np.log10((10**(-14))*(c*v/(v+x))/k))
+print(int(a), 'mL를 넣었을 때 당량점 입니다. 이때 pH는',float(b), '입니다.')
