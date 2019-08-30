@@ -11,7 +11,7 @@ c=float(input('산의 농도를 입력해주세요(M)'))
 v=float(input('산의 부피를 입력해주세요(mL)'))
 cNaOH= float(input('NaOH의 농도를 입력해주세요(M)'))
 vNaOH=float(input('NaOH의 부피를 입력해주세요(mL)'))
-a=(k/c)**0.5
+a=(k/c)**0.5 #5%근사, 농도가 매우 낮을시 실제상황과 다르기 때문에 미리 명시해 줘야됨.
 
 def pH(x, cNaOH, c, v, k):
     acidmmol=c*v
@@ -45,4 +45,3 @@ plt.show()
 a=c*v/cNaOH
 b= dang(a, cNaOH, c, v, k)
 print(int(a), 'mL를 넣었을 때 당량점 입니다. 이때 pH는',float(b), '입니다.')
-
