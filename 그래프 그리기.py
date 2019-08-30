@@ -13,7 +13,7 @@ cNaOH= float(input('NaOH의 농도를 입력해주세요(M)'))
 vNaOH=float(input('NaOH의 부피를 입력해주세요(mL)'))
 a=(k/c)**0.5
 
-def pH(x, cNaOH, c, v, k):
+def pH(x, cNaOH, c, v, k): #입력받은 값들을 기반으로 함숫값 설정
     acidmmol=c*v
     l=[]
     for i in range(len(x)):
@@ -33,9 +33,9 @@ def pH(x, cNaOH, c, v, k):
             l.append(answer)
     return l
 
-def dang(x, cNaOH, c, v, k):
-    answer = 14 + 0.5* np.log10((10**(-14))*(c*v/(v+x))/k)
-    return answer 
+def dang(x, cNaOH, c, v, k): #최종 pH값 도출
+    forpH = 14 + 0.5* np.log10((10**(-14))*(c*v/(v+x))/k)
+    return forpH
 import matplotlib.pyplot as plt 
 get_ipython().run_line_magic('matplotlib', 'inline')
 x1= np.arange(0, vNaOH, 0.001).tolist()
