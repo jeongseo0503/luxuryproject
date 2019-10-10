@@ -3,7 +3,7 @@
 
 # In[5]:
 
-
+#강산의 적정곡선과 약산의 적정곡선도 그려 비교(강산의 그래프 그리는 방법과 동일)
 import numpy as np
 pk=float(input('산의 pKa를 입력해주세요'))
 k=10**((-1)*(pk))
@@ -52,7 +52,8 @@ def strongacid(x, cNaOH, c, v):
         else:
             k.append(7)
     return k
-            
+     
+#파란색은 약산의 적정곡선, 빨간색은 강산의 적정곡선인 그래프를 한 번에 그림
 import matplotlib.pyplot as plt 
 get_ipython().run_line_magic('matplotlib', 'inline')
 x1= np.arange(0, vNaOH, 0.001).tolist()
