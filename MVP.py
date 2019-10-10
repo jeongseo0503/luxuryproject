@@ -3,7 +3,7 @@
 
 # In[5]:
 
-
+#당량점에서의 pH 구하기
 import numpy as np
 pk=float(input('산의 pKa를 입력해주세요'))
 k=10**((-1)*(pk))
@@ -13,6 +13,7 @@ cNaOH= float(input('NaOH의 농도를 입력해주세요(M)'))
 vNaOH=float(input('NaOH의 부피를 입력해주세요(mL)'))
 a=(k/c)**0.5
 
+#dang 이라는 함수 지정
 def dang(x, cNaOH, c, v, k):
     answer = 14 + 0.5* np.log10((10**(-14))*(c*v/(v+x))/k)
     return answer 
