@@ -3,7 +3,7 @@
 
 # In[6]:
 
-
+#헨더슨 하셀 바흐식을 이용해 구간별 pH 구한 뒤 강염기의 부피당 pH로 산-염기 적정 곡선 그리기
 import numpy as np
 pk=float(input('산의 pKa를 입력해주세요'))
 k=10**((-1)*(pk))
@@ -13,6 +13,7 @@ cNaOH= float(input('NaOH의 농도를 입력해주세요(M)'))
 vNaOH=float(input('NaOH의 부피를 입력해주세요(mL)'))
 a=(k/c)**0.5
 
+#각 구간에서의 몰농도를 통한 pH값 구하기
 def pH(x, cNaOH, c, v, k):
     acidmmol=c*v
     l=[]
@@ -36,6 +37,7 @@ def pH(x, cNaOH, c, v, k):
 def dang(x, cNaOH, c, v, k):
     answer = 14 + 0.5* np.log10((10**(-14))*(c*v/(v+x))/k)
     return answer 
+#앞서 구한 데이터를 이용해 그래프 그리기
 import matplotlib.pyplot as plt 
 get_ipython().run_line_magic('matplotlib', 'inline')
 x1= np.arange(0, vNaOH, 0.001).tolist()
